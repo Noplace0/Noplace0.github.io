@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+    <script>
+      (function (m, a, z, e) {
+        var s, t;
+        try {
+          t = m.sessionStorage.getItem("maze-us");
+        } catch (err) {}
+
+        if (!t) {
+          t = new Date().getTime();
+          try {
+            m.sessionStorage.setItem("maze-us", t);
+          } catch (err) {}
+        }
+
+        s = a.createElement("script");
+        s.src = z + "?apiKey=" + e;
+        s.async = true;
+        a.getElementsByTagName("head")[0].appendChild(s);
+        m.mazeUniversalSnippetApiKey = e;
+      })(
+        window,
+        document,
+        "https://snippet.maze.co/maze-universal-loader.js",
+        "8093a6f1-a41c-43e1-9e67-2e41c174886b"
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
